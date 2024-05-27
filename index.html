@@ -1,1 +1,149 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elshan Gurbanov - Backend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0s58VtW9oZT57n3e/nLUfU5D3Xk9d5M+oGozP" crossorigin="anonymous">
+    <style>
+        @keyframes shimmer {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+        @keyframes twinkling {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            background: #291e52;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .stars {
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            animation: shimmer 50s linear infinite;
+            opacity: 0.2; /* Darken the stars layer */
+        }
+        .twinkling {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            animation: twinkling 2s infinite ease-in-out;
+        }
+        .profile {
+            background: rgba(45, 44, 44, 0.5);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        .profile h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .profile p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .email {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #ffa500;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .social-icons a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px;
+        }
+        .social-icons a:hover {
+            color: #ffa500;
+        }
+        .social-icons img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+</div>
+<div class="profile">
+    <div class="profile-info">
+        <img src="https://scontent.cdninstagram.com/v/t51.2885-19/408264553_871234954407529_7422870104804426969_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent.cdninstagram.com&_nc_cat=101&_nc_ohc=4EsGnDKOL4gQ7kNvgGED4W5&edm=APs17CUBAAAA&ccb=7-5&oh=00_AYDw6xozdQhQzzMfqpXUD8949ZG31FmebENKndm9yPh8qw&oe=6659C5C8&_nc_sid=10d13b" alt="Elshan Gurbanov">
+        <div>
+            <h1>Elshan Gurbanov</h1>
+            <p>Backend Developer</p>
+        </div>
+    </div>
+    <p class="email">elshan.elshan.82@gmail.com</p>
+    <div class="social-icons">
+        <a href="https://github.com" target="_blank">
+            <img alt="GitHub" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1051/1051326.png">
+        </a>
+        <a href="https://telegram.org" target="_blank">
+            <img alt="Telegram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img alt="Twitter" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384017.png">
+        </a>
+        <a href="https://linkedin.com" target="_blank">
+            <img alt="LinkedIn" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img alt="Instagram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <img alt="Facebook" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/3670/3670271.png">
+        </a>
+        <a href="https://vk.com" target="_blank">
+            <img alt="VK" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/4494/4494490.png">
+        </a>
+    </div>
+</div>
+</body>
+</html>

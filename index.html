@@ -18,55 +18,60 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
             color: #000;
             text-align: center;
             background: linear-gradient(135deg, #f3ec78, #af4261);
         }
         .background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: -1;
         }
-        .stars {
+        .stars, .twinkling {
             width: 100%;
             height: 100%;
+        }
+        .stars {
             background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
             animation: shimmer 50s linear infinite;
             opacity: 0.2;
         }
         .twinkling {
-            width: 100%;
-            height: 100%;
             background: transparent;
             animation: twinkling 2s infinite ease-in-out;
         }
         .profile {
             background: rgba(255, 255, 255, 0.8);
-            padding: 100px;
-            border-radius: 150px;
+            padding: 50px;
+            border-radius: 20px;
             max-width: 700px;
-            width: 100%;
-            z-index: 1;
+            width: 90%;
             display: flex;
             align-items: center;
             flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-layout {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
         .profile img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
         .profile h1 {
             font-size: 2.5em;
@@ -85,9 +90,8 @@
         }
         .social-icons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-left: 1cm;
+            margin: 0;
         }
         .social-icons a {
             margin: 10px;
@@ -95,26 +99,74 @@
             color: #000;
             font-size: 30px;
         }
-        .social-icons a:hover {
-            color: #ffa500;
-        }
         .social-icons img {
             width: 64px;
             height: 64px;
             object-fit: cover;
         }
-        .profile-layout {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            margin-left: -1cm;
+        @media (max-width: 768px) {
+            .profile {
+                padding: 30px;
+                border-radius: 20px;
+                width: 90%;
+            }
+            .profile img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+            }
+            .profile h1 {
+                font-size: 1.8em;
+                margin: 5px 0;
+            }
+            .profile p {
+                font-size: 1.2em;
+                margin: 5px 0;
+            }
+            .email {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+            }
+            .social-icons a {
+                margin: 5px;
+                font-size: 25px;
+            }
+            .profile-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .profile-text {
+                align-items: center;
+                margin-left: 0;
+            }
         }
-        .profile-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: 20px;
+        @media (max-width: 480px) {
+            .profile {
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .profile img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 10px;
+            }
+            .profile h1 {
+                font-size: 1.5em;
+            }
+            .profile p {
+                font-size: 1em;
+            }
+            .email {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            .social-icons a {
+                font-size: 20px;
+            }
         }
     </style>
     <script>
@@ -132,42 +184,42 @@
     </script>
 </head>
 <body>
-<div class="background">
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-</div>
-<div class="profile">
-    <div class="profile-layout">
-        <img src="https://avatars.githubusercontent.com/u/60292730?v=4" alt="Elshan Gurbanov">
-        <div class="profile-text">
-            <h1>Elshan Gurbanov</h1>
-            <p>Backend Developer</p>
+    <div class="background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+    <div class="profile">
+        <div class="profile-layout">
+            <img src="https://avatars.githubusercontent.com/u/60292730?v=4" alt="Elshan Gurbanov">
+            <div class="profile-text">
+                <h1>Elshan Gurbanov</h1>
+                <p>Backend Developer</p>
+            </div>
+        </div>
+        <div class="email" onclick="copyToClipboard('elshan.elshan.82@gmail.com')">elshan.elshan.82@gmail.com</div>
+        <div class="social-icons">
+            <a href="https://github.com/reyquazar" target="_blank">
+                <img alt="GitHub" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1051/1051326.png">
+            </a>
+            <a href="https://t.me/Flauler" target="_blank">
+                <img alt="Telegram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png">
+            </a>
+            <a href="https://x.com/Reyquazar" target="_blank">
+                <img alt="Twitter" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384017.png">
+            </a>
+            <a href="https://www.linkedin.com/in/elshangurbanovrq/" target="_blank">
+                <img alt="LinkedIn" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png">
+            </a>
+            <a href="https://www.instagram.com/elshanbadcosmos/" target="_blank">
+                <img alt="Instagram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img alt="Facebook" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/3670/3670271.png">
+            </a>
+            <a href="https://vk.com/gktph" target="_blank">
+                <img alt="VK" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/4494/4494490.png">
+            </a>
         </div>
     </div>
-    <div class="email" onclick="copyToClipboard('elshan.elshan.82@gmail.com')">elshan.elshan.82@gmail.com</div>
-    <div class="social-icons">
-        <a href="https://github.com/reyquazar" target="_blank">
-            <img alt="GitHub" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1051/1051326.png">
-        </a>
-        <a href="https://t.me/Flauler" target="_blank">
-            <img alt="Telegram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/2111/2111710.png">
-        </a>
-        <a href="https://x.com/Reyquazar" target="_blank">
-            <img alt="Twitter" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384017.png">
-        </a>
-        <a href="https://www.linkedin.com/in/elshangurbanovrq/" target="_blank">
-            <img alt="LinkedIn" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png">
-        </a>
-        <a href="https://www.instagram.com/elshanbadcosmos/" target="_blank">
-            <img alt="Instagram" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png">
-        </a>
-        <a href="https://facebook.com" target="_blank">
-            <img alt="Facebook" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/3670/3670271.png">
-        </a>
-        <a href="https://vk.com/gktph" target="_blank">
-            <img alt="VK" fetchpriority="high" src="https://cdn-icons-png.flaticon.com/128/4494/4494490.png">
-        </a>
-    </div>
-</div>
 </body>
 </html>
